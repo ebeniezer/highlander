@@ -3,9 +3,25 @@
 
 package main
 
-reader := strings.NewReader(`{"body":123}`)
-request, err := http.NewRequest("GET", "http://localhost:3030/foo", reader)
-// TODO: check err
-client := &http.Client{}
-resp, err := client.Do(request)
-// TODO: check err
+import (
+    "fmt"
+    "os"
+    "time"
+    "github.com/codegangsta/cli"
+)
+
+func main(){
+	app				:= cli.NewApp()
+
+	app.Commands	= []cli.Command{
+		{
+			Name:	'request',
+			Usage:	'Starts curl like request',
+			Action: func(c *cli.Context) {
+				f := highlander.NewReq()
+			}
+	    }
+	}
+
+	app.Run(os.Args)
+}
