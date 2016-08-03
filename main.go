@@ -1,6 +1,8 @@
 // utility for determining single origin
 // placeholder for http request
 
+// test comment
+
 package main
 
 import (
